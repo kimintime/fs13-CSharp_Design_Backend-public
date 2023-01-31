@@ -1,4 +1,7 @@
 # Design Backend structure using CSharp
+For the following project, I am building a Library system. This project is a draft, so everything in it is subject to change.
+
+-----
 
 In this assignment, you are required to design structure and hierachy for a backend service. you can choose between two topics:
 
