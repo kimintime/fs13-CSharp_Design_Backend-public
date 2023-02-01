@@ -17,9 +17,9 @@ public class User
         FirstName = firstName;
         LastName = lastName;
         UserType = userType;
-    }
+    } 
 
-    
+     //Passwords need handling
 }
 
 public enum UserType {
