@@ -10,6 +10,25 @@ public class Book
     public string? ISBN { get; set; }
     public BookType BookType { get; set; }
 
+    public Book(int bookId, string title, string author, string publisher, BookType bookType)
+    {
+        BookId = bookId;
+        Title = title;
+        Author = author;
+        Publisher = publisher;
+        BookType = bookType;
+    }
+
+    public Book(int bookId, string title, string author, string publisher, string isbn, BookType bookType)
+    {
+        BookId = bookId;
+        Title = title;
+        Author = author;
+        Publisher = publisher;
+        ISBN = isbn;
+        BookType = bookType;
+    }
+
     public Book(int bookId, string title, string author, string publisher, string subject, string isbn, BookType bookType)
     {
         BookId = bookId;

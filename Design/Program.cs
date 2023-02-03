@@ -5,13 +5,8 @@ using Models;
 class Program {
     static void Main(string[] args)
     {
-        Console.WriteLine("Testing creating objects for each class as it's slowly built.");
-        Console.WriteLine("New user - ");
-
-        int userId = 0;
-
         var newUser = new User(
-            userId + 1,
+            1,
             "spiderman",
             "spideysense",
             "Peter",
@@ -19,16 +14,42 @@ class Program {
             UserType.Customer
         );
 
-        Library.AddUser(newUser);
+        var newUser2 = new User(
+            2,
+            "batman",
+            "thebatman",
+            "Bruce",
+            "Wayne",
+            UserType.Customer
+        );
 
-        //This isn't how to handle passwords
+        var newBook = new Book(
+            1,
+            "Far From the Madding Crowd",
+            "Thomas Hardy",
+            "Penguin Classics",
+            "0141439653",
+            BookType.Fiction
+        );
 
-        Console.WriteLine($"UserId: {newUser.UserId}");
-        Console.WriteLine($"Username: {newUser.Username}");
-        Console.WriteLine($"Password: {newUser.Password}");
-        Console.Write($"Name: {newUser.FirstName} {newUser.LastName}\n");
-        Console.WriteLine($"UserType: {newUser.UserType}");
+        var newBook2 = new Book(
+            2,
+            "Jane Eyre",
+            "Charlotte Bronte",
+            "Penguin Classics",
+            "9780141441146",
+            BookType.Fiction
+        );
 
+
+        Library library = new Library();
+        library.AddUser(newUser);
+        library.AddUser(newUser2);
+        library.AddBook(newBook);
+        library.AddBook(newBook2);
+
+        library.PrintUsers();
+        library.PrintBooks();
     }
 }
 

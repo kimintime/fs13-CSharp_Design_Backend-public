@@ -9,7 +9,8 @@ public class User
     public string LastName { get; set; }
     public UserType UserType { get; set; }
 
-    public User(int userId, string username, string password, string firstName, string lastName, UserType userType) 
+
+    public User(int userId, string username, string password, string firstName, string lastName, UserType userType)
     {
         UserId = userId;
         Username = username;
@@ -17,12 +18,13 @@ public class User
         FirstName = firstName;
         LastName = lastName;
         UserType = userType;
-    } 
+    }
 
-     //Passwords need handling
+    //Passwords need handling
 }
 
-public enum UserType {
-        Librarian,
-        Customer
-    }
+public enum UserType
+{
+    Librarian,
+    Customer
+}
