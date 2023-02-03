@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Models;
 
 class Program {
@@ -17,6 +18,8 @@ class Program {
             "Parker",
             UserType.Customer
         );
+
+        Library.AddUser(newUser);
 
         //This isn't how to handle passwords
 
