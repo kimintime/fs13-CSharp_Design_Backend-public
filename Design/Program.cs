@@ -23,6 +23,15 @@ class Program {
             UserType.Customer
         );
 
+        var newUser3 = new User(
+            3,
+            "admin",
+            "admin123",
+            "Adam",
+            "Admin",
+            UserType.Librarian
+        );
+
         var newBook = new Book(
             1,
             "Far From the Madding Crowd",
@@ -45,12 +54,17 @@ class Program {
         Library library = new Library();
         library.AddUser(newUser);
         library.AddUser(newUser2);
+        library.AddUser(newUser3);
+        
         library.AddBook(newBook);
         library.AddBook(newBook2);
 
-        library.PrintUsers();
-        library.PrintBooks();
+        library.GetBookById(2);
+        library.GetBookByAuthor("Thomas Hardy");
+        library.ListAuthors();
+        library.ListLibrarians();
+
+        // library.PrintUsers();
+        // library.PrintBooks();
     }
 }
-
-
