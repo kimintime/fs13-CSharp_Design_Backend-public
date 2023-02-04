@@ -47,6 +47,7 @@ public class Library
             Console.WriteLine($"Publisher: {book.Publisher}");
             Console.WriteLine($"ISBN: {book.ISBN}");
             Console.WriteLine($"BookType: {book.BookType}");
+            Console.WriteLine($"Available: {book.OnLoan}");
             Console.WriteLine(" ");
         }
         else
@@ -88,6 +89,7 @@ public class Library
             Console.WriteLine($"Password: {user.Password}");
             Console.Write($"Name: {user.FirstName} {user.LastName}\n");
             Console.WriteLine($"UserType: {user.UserType}");
+            Console.WriteLine($"Books on Loan: {user.HasLoan}");
             Console.WriteLine(" ");
         }
     }
@@ -104,6 +106,7 @@ public class Library
             Console.WriteLine($"Publisher: {book.Publisher}");
             Console.WriteLine($"ISBN: {book.ISBN}");
             Console.WriteLine($"BookType: {book.BookType}");
+            Console.WriteLine($"Available: {book.OnLoan}");
             Console.WriteLine(" ");
         }
     }

@@ -11,7 +11,8 @@ class Program {
             "spideysense",
             "Peter",
             "Parker",
-            UserType.Customer
+            UserType.Customer,
+            false
         );
 
         var newUser2 = new User(
@@ -20,7 +21,8 @@ class Program {
             "thebatman",
             "Bruce",
             "Wayne",
-            UserType.Customer
+            UserType.Customer,
+            false
         );
 
         var newUser3 = new User(
@@ -29,7 +31,8 @@ class Program {
             "admin123",
             "Adam",
             "Admin",
-            UserType.Librarian
+            UserType.Librarian,
+            false
         );
 
         var newBook = new Book(
@@ -38,7 +41,8 @@ class Program {
             "Thomas Hardy",
             "Penguin Classics",
             "0141439653",
-            BookType.Fiction
+            BookType.Fiction,
+            false
         );
 
         var newBook2 = new Book(
@@ -47,7 +51,8 @@ class Program {
             "Charlotte Bronte",
             "Penguin Classics",
             "9780141441146",
-            BookType.Fiction
+            BookType.Fiction,
+            false
         );
 
 

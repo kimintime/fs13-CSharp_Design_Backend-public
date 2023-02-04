@@ -8,9 +8,10 @@ public class User
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public UserType UserType { get; set; }
+    public bool HasLoan { get; set; }
 
 
-    public User(int userId, string username, string password, string firstName, string lastName, UserType userType)
+    public User(int userId, string username, string password, string firstName, string lastName, UserType userType, bool hasLoan)
     {
         UserId = userId;
         Username = username;
@@ -18,6 +19,7 @@ public class User
         FirstName = firstName;
         LastName = lastName;
         UserType = userType;
+        HasLoan = hasLoan;
     }
 
     //Passwords need handling

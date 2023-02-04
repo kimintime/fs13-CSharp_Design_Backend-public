@@ -9,17 +9,19 @@ public class Book
     public string? Subject { get; set; }
     public string? ISBN { get; set; }
     public BookType BookType { get; set; }
+    public bool OnLoan { get; set; }
 
-    public Book(int bookId, string title, string author, string publisher, BookType bookType)
+    public Book(int bookId, string title, string author, string publisher, BookType bookType, bool onLoan )
     {
         BookId = bookId;
         Title = title;
         Author = author;
         Publisher = publisher;
         BookType = bookType;
+        OnLoan = onLoan;
     }
 
-    public Book(int bookId, string title, string author, string publisher, string isbn, BookType bookType)
+    public Book(int bookId, string title, string author, string publisher, string isbn, BookType bookType, bool onLoan)
     {
         BookId = bookId;
         Title = title;
@@ -27,9 +29,10 @@ public class Book
         Publisher = publisher;
         ISBN = isbn;
         BookType = bookType;
+        OnLoan = onLoan;
     }
 
-    public Book(int bookId, string title, string author, string publisher, string subject, string isbn, BookType bookType)
+    public Book(int bookId, string title, string author, string publisher, string subject, string isbn, BookType bookType, bool onLoan)
     {
         BookId = bookId;
         Title = title;
@@ -38,6 +41,7 @@ public class Book
         Subject = subject;
         ISBN = isbn;
         BookType = bookType;
+        OnLoan = onLoan;
     }
 }
 
