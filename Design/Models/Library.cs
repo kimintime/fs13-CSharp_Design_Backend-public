@@ -107,6 +107,16 @@ public class Library
             Console.WriteLine($"ISBN: {book.ISBN}");
             Console.WriteLine($"BookType: {book.BookType}");
             Console.WriteLine($"Available: {book.OnLoan}");
+
+            if (book.UserReview != null)
+            {
+                foreach (var review in book.UserReview)
+                {
+                    Console.WriteLine($"Review left by: {review.User}");
+                    Console.WriteLine(review.UserText);
+                }
+            }
+
             Console.WriteLine(" ");
         }
     }

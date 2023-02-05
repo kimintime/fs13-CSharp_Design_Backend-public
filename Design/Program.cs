@@ -61,6 +61,20 @@ class Program {
             newUser
         );
 
+        var userReview = new UserReview(
+            1,
+            "*** - Far from the Madding Crowd, more like Far from the Maddening Crowd, am I right?",
+            newUser,
+            newBook
+        );
+
+         var userReview2 = new UserReview(
+            1,
+            "***** - I loved it!",
+            newUser2,
+            newBook
+        );
+
         Loans loans = new Loans();
         loans.AddLoan(newLoan);
         loans.DeleteLoan(newLoan);

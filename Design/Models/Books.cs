@@ -10,6 +10,7 @@ public class Book
     public string? ISBN { get; set; }
     public BookType BookType { get; set; }
     public bool OnLoan { get; set; }
+    public UserReview[]? UserReview { get; set; }
 
     public Book(int bookId, string title, string author, string publisher, BookType bookType, bool onLoan )
     {
