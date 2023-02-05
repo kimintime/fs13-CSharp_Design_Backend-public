@@ -34,7 +34,7 @@ public class Library
 
     public void GetBookByAuthor(string author)
     {
-        var book = Books.Find(item => item.Author.Equals(author));
+        var book = Books.Find(item => item.Author != null && item.Author.Equals(author));
 
         Console.WriteLine("------ Finding Book by Author ------");
 
@@ -97,29 +97,45 @@ public class Library
     public void PrintBooks()
     {
         Console.WriteLine("------ Book List ------");
-        foreach (var book in Books)
+
+        if (Books != null && Books.Count > 0)
         {
-            Console.WriteLine($"UserId: {book.BookId}");
-            Console.WriteLine($"Title: {book.Title}");
-            Console.WriteLine($"Author(s): {book.Author}");
-            Console.WriteLine($"Subject: {book.Subject}");
-            Console.WriteLine($"Publisher: {book.Publisher}");
-            Console.WriteLine($"ISBN: {book.ISBN}");
-            Console.WriteLine($"BookType: {book.BookType}");
-            Console.WriteLine($"Available: {book.OnLoan}");
-
-            if (book.UserReview != null)
+            foreach (var book in Books)
             {
-                foreach (var review in book.UserReview)
-                {
-                    Console.WriteLine($"Review left by: {review.User}");
-                    Console.WriteLine(review.UserText);
-                }
-            }
+                Console.WriteLine($"UserId: {book.BookId}");
+                Console.WriteLine($"Title: {book.Title}");
+                Console.WriteLine($"Author(s): {book.Author}");
+                Console.WriteLine($"Subject: {book.Subject}");
+                Console.WriteLine($"Publisher: {book.Publisher}");
+                Console.WriteLine($"ISBN: {book.ISBN}");
+                Console.WriteLine($"BookType: {book.BookType}");
+                Console.WriteLine($"Available: {book.OnLoan}");
 
-            Console.WriteLine(" ");
+                if (book.Reviews != null)
+                {
+                    Console.WriteLine($"Reviews count: {book.Reviews.Count}");
+                    foreach (var review in book.Reviews)
+                    {
+                        Console.WriteLine($"Review left by: {review.User.Username}");
+                        Console.WriteLine($"Review text: {review.UserText}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No reviews for this book.");
+                }
+
+                Console.WriteLine(" ");
+            }
+        }
+        else
+        {
+            Console.WriteLine("No books to display.");
         }
     }
+
+
+
 
 
 }

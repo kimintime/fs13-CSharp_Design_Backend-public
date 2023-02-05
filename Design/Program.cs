@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using Models;
 
-class Program {
+class Program
+{
     static void Main(string[] args)
     {
         var newUser = new User(
@@ -62,22 +63,26 @@ class Program {
         );
 
         var userReview = new UserReview(
-            1,
+
             "*** - Far from the Madding Crowd, more like Far from the Maddening Crowd, am I right?",
             newUser,
             newBook
         );
 
-         var userReview2 = new UserReview(
-            1,
-            "***** - I loved it!",
-            newUser2,
-            newBook
-        );
+        var userReview2 = new UserReview(
+            
+           "***** - I loved it!",
+           newUser2,
+           newBook
+       );
+
+        Book book = new Book();
+        book.AddReview(userReview);
+        book.AddReview(userReview2);
 
         Loans loans = new Loans();
         loans.AddLoan(newLoan);
-        loans.DeleteLoan(newLoan);
+        //loans.DeleteLoan(newLoan);
 
         loans.PrintLoans();
 
@@ -85,7 +90,7 @@ class Program {
         library.AddUser(newUser);
         library.AddUser(newUser2);
         library.AddUser(newUser3);
-        
+
         library.AddBook(newBook);
         library.AddBook(newBook2);
 
