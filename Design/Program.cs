@@ -42,7 +42,7 @@ class Program {
             "Penguin Classics",
             "0141439653",
             BookType.Fiction,
-            false
+            true
         );
 
         var newBook2 = new Book(
@@ -52,9 +52,20 @@ class Program {
             "Penguin Classics",
             "9780141441146",
             BookType.Fiction,
-            false
+            true
         );
 
+        var newLoan = new Loan(
+            1,
+            newBook,
+            newUser
+        );
+
+        Loans loans = new Loans();
+        loans.AddLoan(newLoan);
+        loans.DeleteLoan(newLoan);
+
+        loans.PrintLoans();
 
         Library library = new Library();
         library.AddUser(newUser);
@@ -64,12 +75,12 @@ class Program {
         library.AddBook(newBook);
         library.AddBook(newBook2);
 
-        library.GetBookById(2);
-        library.GetBookByAuthor("Thomas Hardy");
-        library.ListAuthors();
-        library.ListLibrarians();
+        // library.GetBookById(2);
+        // library.GetBookByAuthor("Thomas Hardy");
+        // library.ListAuthors();
+        // library.ListLibrarians();
 
-        // library.PrintUsers();
-        // library.PrintBooks();
+        library.PrintUsers();
+        library.PrintBooks();
     }
 }
