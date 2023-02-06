@@ -64,16 +64,18 @@ class Program
 
         var userReview = new UserReview(
 
-            "*** - Far from the Madding Crowd, more like Far from the Maddening Crowd, am I right?",
+            "Far from the Madding Crowd, more like Far from the Maddening Crowd, am I right?",
             newUser,
-            newBook
+            newBook,
+            ReviewType.Fair
         );
 
         var userReview2 = new UserReview(
             
-           "***** - I loved it!",
+           "I loved it!",
            newUser2,
-           newBook
+           newBook,
+           ReviewType.Excellent
        );
 
         Book book = new Book();

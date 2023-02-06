@@ -117,7 +117,7 @@ public class Library
                     foreach (var review in book.Reviews)
                     {
                         Console.WriteLine($"Review left by: {review.User.Username}");
-                        Console.WriteLine($"Review text: {review.UserText}");
+                        Console.Write($"{review.UserText}\n");
                     }
                 }
                 else
@@ -133,9 +133,4 @@ public class Library
             Console.WriteLine("No books to display.");
         }
     }
-
-
-
-
-
 }

@@ -62,6 +62,25 @@ public class Book
             userReview.Book.Reviews = new List<UserReview>();
         }
 
+        if (userReview.ReviewType == ReviewType.Excellent)
+        {
+            userReview.UserText = $"Rating: ****\n {userReview.UserText}";
+        }
+        else if (userReview.ReviewType == ReviewType.Good)
+        {
+            userReview.UserText = $"Rating: ***\n {userReview.UserText}";
+        }
+        else if (userReview.ReviewType == ReviewType.Fair)
+        {
+            userReview.UserText = $"Rating: **\n {userReview.UserText}";
+        }
+        else if (userReview.ReviewType == ReviewType.Poor)
+        {
+            userReview.UserText = $"Rating: *\n {userReview.UserText}";
+        }
+
+
+
         userReview.Book.Reviews.Add(userReview);
     }
 }
