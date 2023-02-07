@@ -40,7 +40,7 @@ public class Library
 
         if (book != null)
         {
-            Console.WriteLine($"UserId: {book.BookId}");
+            Console.WriteLine($"BookId: {book.BookId}");
             Console.WriteLine($"Title: {book.Title}");
             Console.WriteLine($"Author(s): {book.Author}");
             Console.WriteLine($"Subject: {book.Subject}");
@@ -79,58 +79,66 @@ public class Library
         }
     }
 
-    public void PrintUsers()
+    public async Task PrintUsers()
     {
-        Console.WriteLine("------ User List ------");
-        foreach (var user in Users)
+        await Task.Run(() =>
         {
-            Console.WriteLine($"UserId: {user.UserId}");
-            Console.WriteLine($"Username: {user.Username}");
-            Console.WriteLine($"Password: {user.Password}");
-            Console.Write($"Name: {user.FirstName} {user.LastName}\n");
-            Console.WriteLine($"UserType: {user.UserType}");
-            Console.WriteLine($"Books on Loan: {user.HasLoan}");
-            Console.WriteLine(" ");
-        }
-    }
-
-    public void PrintBooks()
-    {
-        Console.WriteLine("------ Book List ------");
-
-        if (Books != null && Books.Count > 0)
-        {
-            foreach (var book in Books)
+            Console.WriteLine("------ User List ------");
+            foreach (var user in Users)
             {
-                Console.WriteLine($"BookId: {book.BookId}");
-                Console.WriteLine($"Title: {book.Title}");
-                Console.WriteLine($"Author(s): {book.Author}");
-                Console.WriteLine($"Subject: {book.Subject}");
-                Console.WriteLine($"Publisher: {book.Publisher}");
-                Console.WriteLine($"ISBN: {book.ISBN}");
-                Console.WriteLine($"BookType: {book.BookType}");
-                Console.WriteLine($"Available: {book.OnLoan}");
-
-                if (book.Reviews != null)
-                {
-                    Console.WriteLine($"Reviews count: {book.Reviews.Count}");
-                    foreach (var review in book.Reviews)
-                    {
-                        Console.WriteLine($"Review left by: {review.User.Username}");
-                        Console.Write($"{review.UserText}\n");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No reviews for this book.");
-                }
-
+                Console.WriteLine($"UserId: {user.UserId}");
+                Console.WriteLine($"Username: {user.Username}");
+                Console.WriteLine($"Password: {user.Password}");
+                Console.Write($"Name: {user.FirstName} {user.LastName}\n");
+                Console.WriteLine($"UserType: {user.UserType}");
+                Console.WriteLine($"Books on Loan: {user.HasLoan}");
                 Console.WriteLine(" ");
             }
-        }
-        else
+        });
+    }
+
+    public async Task PrintBooks()
+    {
+        await Task.Run(() =>
         {
-            Console.WriteLine("No books to display.");
-        }
+            Console.WriteLine("------ Book List ------");
+
+            if (Books != null && Books.Count > 0)
+            {
+                foreach (var book in Books)
+                {
+                    Console.WriteLine($"BookId: {book.BookId}");
+                    Console.WriteLine($"Title: {book.Title}");
+                    Console.WriteLine($"Author(s): {book.Author}");
+                    Console.WriteLine($"Subject: {book.Subject}");
+                    Console.WriteLine($"Publisher: {book.Publisher}");
+                    Console.WriteLine($"ISBN: {book.ISBN}");
+                    Console.WriteLine($"BookType: {book.BookType}");
+                    Console.WriteLine($"Available: {book.OnLoan}");
+
+                    if (book.Reviews != null)
+                    {
+                        Console.WriteLine($"Reviews count: {book.Reviews.Count}");
+                        foreach (var review in book.Reviews)
+                        {
+                            Console.WriteLine($"Review left by: {review.User.Username}");
+                            Console.Write($"{review.UserText}\n");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No reviews for this book.");
+                    }
+
+                    Console.WriteLine(" ");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No books to display.");
+            }
+
+        });
+
     }
 }

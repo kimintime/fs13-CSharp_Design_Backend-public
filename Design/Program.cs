@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Models;
+﻿using Models;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         var newUser = new User(
             1,
@@ -71,7 +69,7 @@ class Program
         );
 
         var userReview2 = new UserReview(
-            
+
            "I loved it!",
            newUser2,
            newBook,
@@ -96,12 +94,13 @@ class Program
         library.AddBook(newBook);
         library.AddBook(newBook2);
 
-        // library.GetBookById(2);
-        // library.GetBookByAuthor("Thomas Hardy");
-        // library.ListAuthors();
-        // library.ListLibrarians();
+        library.GetBookById(2);
+        library.GetBookByAuthor("Thomas Hardy");
+        library.ListAuthors();
+        library.ListLibrarians();
 
-        library.PrintUsers();
-        library.PrintBooks();
+        await library.PrintUsers();
+        await library.PrintBooks();
+
     }
 }
