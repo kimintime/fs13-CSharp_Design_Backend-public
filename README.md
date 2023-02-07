@@ -1,6 +1,10 @@
 # Design Backend structure using CSharp
 For the following project, I am building a Library system. There are many features that could be implemented, so at this stage, I chose to pick and choose what I consider to be the main examples. More on the explanation and structure to follow, but the main console printout is as follows. Our library system is populated and run from the Program, filled with books and users, as well as book reviews and loan status, the results printed from the Library class.
 
+<img width="835" alt="Screenshot 2023-02-07 at 22 58 13" src="https://user-images.githubusercontent.com/40215472/217367625-027bff26-4a3e-4fbc-a06b-450c7cda17c7.png">
+
+<img width="793" alt="Screenshot 2023-02-07 at 22 59 20" src="https://user-images.githubusercontent.com/40215472/217367657-40d7521c-39a3-4979-a32f-60fcc101a4e3.png">
+
 -----
 ## Library Features
 
@@ -30,4 +34,8 @@ You will decide to whether use class/interface/struct for each situation.
 - Optional: Review
 
 # File Structure
+
+<img width="557" alt="Screenshot 2023-02-07 at 23 00 52" src="https://user-images.githubusercontent.com/40215472/217367721-3a34379a-d29c-47ce-a857-9df9cb102cc6.png">
+
+
 
